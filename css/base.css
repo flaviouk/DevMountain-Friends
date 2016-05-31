@@ -1,0 +1,50 @@
+/*GLOBALS*/
+
+
+/*CONTENT*/
+#content{
+  padding-top: 85px;
+  padding-bottom: 100px;
+   /*85px 10% 100px 5%;*/
+}
+
+/*NAVBAR*/
+.navbar{
+  position: fixed;
+  height: 85px;
+  background-color: #365899;
+  display: table;
+  text-align: center;
+  width: 100%;
+  line-height: 75px;
+  color: white;
+}
+.navbar h1{
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.navbar a{
+  color: white;
+}
+/*FOOTER*/
+footer{
+  position: fixed;
+  bottom: 0;
+  background-color: #365899;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+.footer-item{
+  list-style-type: none;
+  display: inline-block;
+  padding-right: 200px;
+  font-size: 1.2em;
+}
+footer ul:nth-child(3){
+  padding-right: 0;
+}
+footer ul a{
+  color: white;
+}

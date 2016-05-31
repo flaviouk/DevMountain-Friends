@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="DevBook" ng-cloak ui-router-styles>
+    <head>
+        <meta charset="utf-8">
+        <title>DevMountain Friends</title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    </head>
+    <body ng-controller="mainController">
+        <div class="navbar">
+            <a href="#"><h1>DevBook</h1></a>
+        </div>
+
+
+        <!-- <div id="content" class="container" ui-view></div> -->
+<ui-view class="container"></ui-view>
+
+        <footer>
+            <ul>
+                <a href="#/devs"><li class="footer-item">View Devs</li></a>
+                <a href="#/search"><li class="footer-item">Find Devs</li></a>
+                <a href="#/update"><li class="footer-item">Update Profile</li></a>
+            </ul>
+        </footer>
+
+
+        <!-- JQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+        <!-- Angular.js Libraries -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.js"></script> -->
+
+        <!-- Materialize -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+        <!-- Angular ui router -->
+        <script type="text/javascript" src="js/ui-router.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+
+        <!-- App files -->
+        <script src="js/app.js"></script>
+        <script src="lib/angular-ui-router-styles/ui-router-styles.js"></script>
+        <!-- Controllers -->
+        <script src="js/maincontroller.js"></script>
+        <script src="templates/devs/devscontroller.js"></script>
+        <!-- <script src="js/searchcontroller.js"></script>
+        <script src="js/maincontroller.js"></script> -->
+
+    </body>
+</html>
