@@ -2,33 +2,3 @@
     width: 300px;
     margin-top: 200px;
 }
-.input-field a {
-    position: static;
-}
-/* label color */
-.input-field label {
-    color: #404345;
-}
-/* label focus color */
-.input-field input[type=text]:focus + label, .input-field textarea[type=text]:focus + label {
-    color: #1e88e5;
-}
-/* label underline focus color */
-.input-field input[type=text], .input-field input[type=text]:focus {
-    border-bottom: 1px solid #1e88e5;
-    box-shadow: 0 1px 0 0 #1e88e5;
-}
-/* valid color */
-.input-field input[type=text].valid, .input-field textarea[type=text]:valid {
-    border-bottom: 1px solid #1e88e5;
-    box-shadow: 0 1px 0 0 #1e88e5;
-}
-/* invalid color */
-.input-field input[type=text].invalid, .input-field textarea[type=text]:invalid {
-    border-bottom: 1px solid #1e88e5;
-    box-shadow: 0 1px 0 0 #1e88e5;
-}
-/* icon prefix focus color */
-.input-field .prefix.active {
-    color: #1e88e5;
-}

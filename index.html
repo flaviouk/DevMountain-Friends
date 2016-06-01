@@ -2,8 +2,10 @@
 <html ng-app="DevBook" ng-cloak ui-router-styles>
     <head>
         <meta charset="utf-8">
-        <title>DevMountain Friends</title>
+        <title>DevBook</title>
         <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+        <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/base.css"/>
     </head>
@@ -13,8 +15,8 @@
         </div>
 
 
-        <!-- <div id="content" class="container" ui-view></div> -->
-<ui-view class="container"></ui-view>
+        <div id="content" class="container" ui-view></div>
+
 
         <footer>
             <ul>
@@ -47,9 +49,9 @@
         <script src="lib/angular-ui-router-styles/ui-router-styles.js"></script>
         <!-- Controllers -->
         <script src="js/maincontroller.js"></script>
-        <script src="templates/devs/devscontroller.js"></script>
-        <!-- <script src="js/searchcontroller.js"></script>
-        <script src="js/maincontroller.js"></script> -->
+        <script src="templates/devs/devs.js"></script>
+        <script src="js/factories/profiles.js"></script>
+        <!-- <script src="js/maincontroller.js"></script> -->
 
     </body>
 </html>

@@ -1,0 +1,25 @@
+#search-devs-container{
+    margin-top: 20px;
+}
+.tagline{
+    text-align: center;
+}
+.bio{
+    font-size: 17px;
+}
+.names{
+    display: inline-block;
+    float: right;
+}
+.picture{
+    display: inline-block;
+}
+.picture img{
+    width: 100%;
+}
+#show-dev{
+    margin-top: 20px;
+}
+.names h2{
+    font-size: 43px;
+}

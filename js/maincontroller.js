@@ -1,3 +1,3 @@
-DevBook.controller('mainController', ($scope) => {
-    $scope.testmain = 'MAIN';
+DevBook.controller('mainController', function($scope) {
+    
 });

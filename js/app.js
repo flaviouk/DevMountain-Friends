@@ -7,17 +7,17 @@ DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         .state('initial-view', {
             url:'/'
             ,   templateUrl: '../templates/initial/initial-view.html'
-            // ,   controller: 'initialController'
+            ,   controller: 'initialController'
             ,   data: {
                     css: ['../templates/initial/initial-view.css']
                 }
         })
         .state('devs-view', {
             url:'/devs'
-            ,   templateUrl: '../templates/devs/devs-view.html'
+            ,   templateUrl: '../templates/devs/devs.html'
             ,   controller: 'devsController'
             ,   data: {
-                    css: ['/../templates/devs/devs-view.css']
+                    css: ['/../templates/devs/devs.css']
                 }
         }).state('search-view', {
             url:'/search'
