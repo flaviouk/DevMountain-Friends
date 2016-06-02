@@ -1,9 +1,5 @@
 DevBook.controller('devsController', function($scope, profilesFactory, $timeout){
     $scope.profiles = [];
-    var localProfiles = JSON.parse(localStorage.getItem("profiles"));
-    for(var key in localProfiles){
-        $scope.profiles.push(localProfiles[key]);
-    }
 
     $scope.showSingleProfile = [];
     $scope.showSingleProfile.push($scope.myProfile);
@@ -22,11 +18,7 @@ DevBook.controller('devsController', function($scope, profilesFactory, $timeout)
     }
 
     $scope.singleProfile = function(user){
+        $scope.localShow = false;
         $scope.showSingleProfile[0] = user;
-        console.log(user);
     }
-
-    // $scope.postProfile = function(){
-    //     profilesFactory.postProfile({name: 'Flavio Carvalho', tagline: 'Awesome Tagline', bio: 'yoooooooo', profileUrl: 'https://avatars0.githubusercontent.com/u/8357327?v=3&s=460'});
-    // }
 });

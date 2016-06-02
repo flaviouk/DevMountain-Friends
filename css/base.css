@@ -2,6 +2,9 @@
 .input-field a {
     position: static;
 }
+p{
+  word-wrap: break-word;
+}
 /* label color */
 .input-field label {
     color: #404345;

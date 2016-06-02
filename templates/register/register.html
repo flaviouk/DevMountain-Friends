@@ -10,27 +10,27 @@
             <p>Register, its free!</p>
             <br />
             <div class="input-field">
-                <input id="full-name" type="text" class="validate">
+                <input id="full-name" type="text" class="validate" ng-model="registerName">
                 <label for="full-name">Full Name</label>
             </div>
 
             <div class="input-field">
-                <input id="tagline" type="text" class="validate">
+                <input id="tagline" type="text" class="validate" ng-model="registerTagline">
                 <label for="tagline">Tagline</label>
             </div>
 
             <div class="input-field">
-                <input id="profile-url" type="text" class="validate">
+                <input id="profile-url" type="text" class="validate" ng-model="registerUrl">
                 <label for="profile-url">Profile Image Url</label>
             </div>
 
             <div class="input-field">
-                <textarea id="textarea-bio" type="text" class="materialize-textarea"></textarea>
+                <textarea id="textarea-bio" type="text" class="materialize-textarea" ng-model="registerBio"></textarea>
                 <label for="textarea-bio">Bio</label>
             </div>
 
             <div class="input-field">
-                <a class="waves-effect waves-light btn blue darken-1">Save</a>
+                <a class="waves-effect waves-light btn blue darken-1" ng-click="register(registerName, registerTagline, registerUrl, registerBio)">Register</a>
             </div>
 
         </form>
