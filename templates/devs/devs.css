@@ -20,6 +20,12 @@
 #show-dev{
     margin-top: 20px;
 }
-.names h2{
+.name{
     font-size: 43px;
+}
+.loadmore{
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 75vh;
 }

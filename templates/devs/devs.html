@@ -1,35 +1,28 @@
-<div class="row">
+<div class="row" ng-init="getProfiles()" ng-cloak>
     <div id="show-dev" class="col s6">
-        <button type="button" ng-click="getIds()">Get Profiles</button>
         <div class="row">
             <div class="picture col s6">
-                <img src="http://placehold.it/550x550" alt="" />
+                <img ng-src="{{showSingleProfile[0].profileUrl}}" err-src="/../../lib/img/avatar.png" alt="profile-picture"/>
             </div>
             <div class="names col s6">
-                <h2 class="firstname">First Name</h2>
-                <h2 class="lastname">Last Name</h2>
+                <h2 class="name">{{showSingleProfile[0].name}}</h2>
             </div>
         </div>
 
-        <h4 class="tagline">TAGLINE TAGLINE TAGLINE TAGLINE TAGLINE </h4>
-        <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h4 class="tagline">{{showSingleProfile[0].tagline}}</h4>
+        <p class="bio">{{showSingleProfile[0].bio}}</p>
     </div>
     <!-- END LEFT SIDE -->
     <div id="search-devs-container" class="col s6">
         <div class="input-field">
-            <input
-            id="search-devs"
-            type="text"
-            class="validate"
-            ng-model="search.data.name"
-            >
-
-            <label for="search-devs"><i class="material-icons left">search</i>Search for cool Developers</label>
+            <input id="search-devs" type="text" class="validate" ng-model="search.name">
+            <label for="search-devs">
+                <i class="material-icons left">search</i>Search for cool Developers</label>
         </div>
-        <div class="row" ng-repeat="dev in profiles | filter: search">
-            <div class="picture col s6">
-                <!-- <img ng-src="{{dev.data.profileUrl}}" alt="" /> -->
-                <h5>{{dev.data.name}}</h5>
+        <div class="row loadmore">
+            <div href="#" class="picture col s6" ng-click="singleProfile(dev)" ng-repeat="dev in profiles | filter: search track by $index">
+                <img ng-src="{{dev.profileUrl}}" err-src="/../../lib/img/avatar.png" alt=""/>
+                <h5>{{dev.name}}</h5>
             </div>
         </div>
     </div>

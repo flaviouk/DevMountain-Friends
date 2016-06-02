@@ -10,8 +10,19 @@
         <link rel="stylesheet" type="text/css" href="css/base.css"/>
     </head>
     <body ng-controller="mainController">
-        <div class="navbar">
-            <a href="#"><h1>DevBook</h1></a>
+        <div class="navbar row">
+            <div class="col s4">
+                <h3 ng-hide="logged">Hi, {{myProfile.name}}</h3>
+                <h3 ng-hide="!logged">Hi, stranger</h3>
+            </div>
+            <div class="col s4">
+                <a href="#"><h1>DevBook</h1></a>
+            </div>
+            <div class="col s4">
+                <h3 class="logins"  ng-if="!isLogged"><a href="#/register">Register</a></h3>
+                <h3 class="logins" ng-if="isLogged" ng-click="logout()"><a href="#/login">Logout</a></h3>
+                <h3 class="logins" ng-if="!isLogged"><a href="#/login">Login</a></h3>
+            </div>
         </div>
 
 
@@ -20,9 +31,10 @@
 
         <footer>
             <ul>
-                <a href="#/devs"><li class="footer-item">View Devs</li></a>
-                <a href="#/search"><li class="footer-item">Find Devs</li></a>
-                <a href="#/update"><li class="footer-item">Update Profile</li></a>
+                <a ><li class="footer-item"></li></a>
+                <a href="#/devs" ng-hide="isLogged === false"><li class="footer-item">View Devs</li></a>
+                <a href="#/search" ng-hide="isLogged === false"><li class="footer-item">Find Devs</li></a>
+                <a href="#/update" ng-hide="isLogged === false"><li class="footer-item">Update Profile</li></a>
             </ul>
         </footer>
 
@@ -47,11 +59,15 @@
         <!-- App files -->
         <script src="js/app.js"></script>
         <script src="js/ui-router-styles.js"></script>
+        <script src="js/factories/profiles.js"></script>
+        <script src="js/factories/login-factory.js"></script>
+
         <!-- Controllers -->
         <script src="js/maincontroller.js"></script>
         <script src="templates/devs/devs.js"></script>
-        <script src="js/factories/profiles.js"></script>
-        <!-- <script src="js/maincontroller.js"></script> -->
+        <script src="templates/login/login.js"></script>
+
+
 
     </body>
 </html>

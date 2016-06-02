@@ -1,0 +1,28 @@
+<div class="row" ng-if="!isLogged">
+    <div class="col s6">
+        <img class="initial-logo" src="/../lib/img/devmountain-logo.png" alt="devmountain-logo" />
+    </div>
+    <div class="col s6">
+        <form class="register" action="#/landing">
+            <h2>Welcome to
+                <b>DevBook</b>
+            </h2>
+            <h3>Login</h3>
+            <br />
+            <div class="input-field">
+                <input id="full-name" type="text" class="validate" ng-model="profileName">
+                <label for="full-name">Full Name</label>
+            </div>
+
+            <div class="input-field">
+                <input id="id" class="validate" type="password" ng-model="profileId">
+                <label for="id">ID</label>
+            </div>
+
+            <div class="input-field">
+                <a class="waves-effect waves-light btn blue darken-1" ng-click="login(profileName, profileId)">Login</a>
+            </div>
+        </form>
+    </div>
+
+</div>

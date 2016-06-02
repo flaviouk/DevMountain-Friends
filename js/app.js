@@ -1,15 +1,30 @@
 var DevBook = angular.module('DevBook', ['ui.router', 'uiRouterStyles']);
 
-DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $location) {
+
+    // if(loginFactory.isLoggedIn){
+    //   $urlRouterProvider.otherwise('/devs');
+    // }
+    // if(!loginFactory.isLoggedIn){
+    //   $urlRouterProvider.otherwise('/login');
+    // }
+
 
     $stateProvider
-        .state('initial-view', {
-            url:'/'
-            ,   templateUrl: '../templates/initial/initial-view.html'
-            ,   controller: 'initialController'
+        .state('login-view', {
+            url:'/login'
+            ,   templateUrl: '../templates/login/login.html'
+            // ,   controller: 'loginController'
             ,   data: {
-                    css: ['../templates/initial/initial-view.css']
+                    css: ['../templates/login/login.css']
+                }
+        })
+        .state('register-view', {
+            url:'/register'
+            ,   templateUrl: '../templates/register/register.html'
+            // ,   controller: 'registerController'
+            ,   data: {
+                    css: ['../templates/register/register.css']
                 }
         })
         .state('devs-view', {
@@ -19,18 +34,20 @@ DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
             ,   data: {
                     css: ['/../templates/devs/devs.css']
                 }
-        }).state('search-view', {
-            url:'/search'
-            ,   templateUrl: '../templates/search/search-view.html'
-            ,   controller: 'searchController'
-            ,   data: {
-                    css: ['/../templates/search/search-view.css']
-                }
-        });
-
+        })
 }]);
 
-
+DevBook.directive('errSrc', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element.bind('error', function() {
+        if (attrs.src != attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc);
+        }
+      });
+    }
+  }
+});
 
 
 

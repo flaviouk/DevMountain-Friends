@@ -34,7 +34,7 @@
 #content{
   padding-top: 85px;
   padding-bottom: 100px;
-   /*85px 10% 100px 5%;*/
+  height: 100vh;
 }
 
 /*NAVBAR*/
@@ -56,6 +56,20 @@
 .navbar a{
   color: white;
 }
+.navbar h3{
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  padding: 15px 0 0 30px;
+}
+.logins{
+  font-size: 30px;
+  float: right;
+  display: inline-block;
+}
+
+
 /*FOOTER*/
 footer{
   position: fixed;
