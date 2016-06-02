@@ -29,3 +29,12 @@
     overflow-x: hidden;
     height: 75vh;
 }
+.friends-btn{
+    text-align: left;
+}
+.add-friend{
+    margin-bottom: 10px;
+}
+.friends-btn i{
+    padding-right: 10px;
+}
