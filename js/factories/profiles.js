@@ -22,10 +22,20 @@ DevBook.factory('profilesFactory', function($http) {
             return result.data;
         });
     }
+    function updateMyProfile(myId, obj){
+        return $http({
+            url: 'http://connections.devmounta.in/api/profiles/' + myId
+            ,   method: 'PUT'
+            ,   data: obj
+        }).then(function(result){
+            return result.data;
+        })
+    }
 
     return {
         getIds: getIds
         ,   getProfiles: getProfiles
         ,   getMyProfile: getProfiles
+        ,   updateProfile: updateMyProfile
     };
 });

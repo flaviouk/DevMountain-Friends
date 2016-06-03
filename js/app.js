@@ -33,12 +33,16 @@ DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
                     css: ['/../templates/friends/friends.css']
                 }
         })
+        .state('update-view', {
+            url:'/update'
+            ,   templateUrl: '../templates/update/update.html'
+            ,   data: {
+                    css: ['/../templates/update/update.css']
+                }
+        })
         .state('chat-view', {
             url:'/chat'
             ,   templateUrl: '../templates/chat/chat.html'
-            ,   data: {
-                    css: ['/../templates/chat/chat.css']
-                }
         })
 }]);
 

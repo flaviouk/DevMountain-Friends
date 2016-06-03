@@ -1,0 +1,27 @@
+<div class="row update">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input ng-model="name" value="{{myProfile.name}}" id="first_name" type="text" class="validate">
+          <label class="active" for="first_name">Full Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input ng-model="tagline" id="tagline" value="{{myProfile.tagline}}" type="text" class="validate">
+          <label class="active" for="tagline">Tagline</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <input ng-model="profileUrl" id="profile-image" value="{{myProfile.profileUrl}}" class="validate" type="text" >
+        <label class="active" for="profile-image">Profile Image Url</label>
+      </div>
+      <div class="input-field col s12">
+        <input disabled id="profile-id" value="{{myProfile._id}}" id="disabled" class="validate" type="text" >
+        <label class="active" for="profile-id">Profile ID</label>
+      </div>
+      <div class="input-field col s12">
+        <textarea id="bio" ng-model="bio" value="{{myProfile.bio}}" type="text" class="materialize-textarea"></textarea>
+        <label class="active" for="bio">Bio</label>
+      </div>
+      <a class="waves-effect waves-light blue btn" ng-click="updateMyProfile(myProfile._id, {name: name, tagline: tagline, profileUrl: profileUrl, bio: bio})">Update</a>
+    </form>
+  </div>

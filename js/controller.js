@@ -63,12 +63,22 @@ function($scope, $interval,$location, authFactory, profilesFactory, friendsFacto
                     }
                 });
             };
+            // Update my profile
+            $scope.updateMyProfile = function(myId, myUpdatedProfile){
+                profilesFactory.updateProfile(myId, myUpdatedProfile).then(function(result) {
+                    $scope.myProfile.name = result.name;
+                    $scope.myProfile.tagline = result.tagline;
+                    $scope.myProfile.bio = result.bio;
+                    $scope.myProfile.profileUrl = result.profileUrl;
+                    alert('Updated!');
+                    $location.path('/developers');
+                })
+            };
 
         // FRIENDS **********************************************
             // Get Friends
             $scope.getFriends = function(){
                 $scope.myFriends.length = 0;
-                console.log($scope.myProfile.friends);
                 for(var i = 0; i < $scope.myProfile.friends.length; i++){
                     profilesFactory.getProfiles($scope.myProfile.friends[i]._id)
                         .then(function(result){
