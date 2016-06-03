@@ -1,0 +1,40 @@
+#search-devs-container{
+    margin-top: 20px;
+}
+.tagline{
+    text-align: center;
+}
+.bio{
+    font-size: 17px;
+}
+.names{
+    display: inline-block;
+    float: right;
+}
+.picture{
+    display: inline-block;
+}
+.picture img{
+    width: 100%;
+}
+#show-dev{
+    margin-top: 20px;
+}
+.name{
+    font-size: 43px;
+}
+.loadmore{
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 75vh;
+}
+.friends-btn{
+    text-align: left;
+}
+.add-friend{
+    margin-bottom: 10px;
+}
+.friends-btn i{
+    padding-right: 10px;
+}

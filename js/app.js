@@ -20,11 +20,17 @@ DevBook.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
                 }
         })
         .state('devs-view', {
-            url:'/devs'
+            url:'/developers'
             ,   templateUrl: '../templates/devs/devs.html'
-            ,   controller: 'devsController'
             ,   data: {
                     css: ['/../templates/devs/devs.css']
+                }
+        })
+        .state('friends-view', {
+            url:'/friends'
+            ,   templateUrl: '../templates/friends/friends.html'
+            ,   data: {
+                    css: ['/../templates/friends/friends.css']
                 }
         })
 }]);

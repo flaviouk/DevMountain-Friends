@@ -12,21 +12,20 @@ DevBook.factory('profilesFactory', function($http) {
                 }
             }
             return filtered;
-        })
+        });
     }
-
     function getProfiles(id) {
         return $http({
             url: 'http://connections.devmounta.in/api/profiles/' + id,
             method: 'GET'
         }).then(function(result){
             return result.data;
-        })
+        });
     }
-
 
     return {
         getIds: getIds
         ,   getProfiles: getProfiles
+        ,   getMyProfile: getProfiles
     };
 });
