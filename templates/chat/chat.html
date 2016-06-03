@@ -1,0 +1,9 @@
+<div class="row" ng-if="isLogged" ng-cloak>
+    <h1>DevMountain Chat Room </h1>
+    <form ng-submit="postMsg()">
+        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+    </form>
+    <div class="messages-container">
+        <p ng-repeat="message in messages">{{$scope.myProfile.name}}: {{message.text}}</p>
+    </div>
+</div>

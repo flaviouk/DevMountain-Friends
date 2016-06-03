@@ -31,9 +31,10 @@
 }
 .friends-btn{
     text-align: left;
+    display: table;
 }
 .add-friend{
-    margin-bottom: 10px;
+    display: table-cell;
 }
 .friends-btn i{
     padding-right: 10px;

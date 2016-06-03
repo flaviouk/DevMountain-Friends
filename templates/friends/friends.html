@@ -1,10 +1,10 @@
-<div class="row" ng-init="getProfiles()" ng-cloak >
+<div class="row" ng-init="getFriends()" ng-if="isLogged" ng-cloak >
     <div id="show-dev" class="col s6">
 
         <!-- LOCAL PROFILE -->
         <div class="row" ng-if="localShow">
             <div class="picture col s6">
-                <img ng-src="{{myProfile.profileUrl}}" err-src="/../../lib/img/avatar.png" alt="profile-picture"/>
+                <img ng-src="{{myProfile.profileUrl}}" err-src="/../../lib/img/avatar.png" />
             </div>
             <div class="names col s6">
                 <h2 class="name">{{myProfile.name}}</h2>
@@ -16,35 +16,35 @@
         <!-- SINGLE PROFILE -->
         <div class="row" ng-if="!localShow">
             <div class="picture col s6">
-                <img ng-src="{{showSingleProfile.profileUrl}}" err-src="/../../lib/img/avatar.png" alt="profile-picture"/>
+                <img ng-src="{{showSingleProfile.profileUrl}}" err-src="/../../lib/img/avatar.png"/>
             </div>
             <div class="names col s6">
-                <h2 class="name">{{showSingleProfile.name}}</h2>
-                <div class="input-field friends-btn">
-                    <a class="waves-effect waves-light btn blue darken-1 add-friend" ng-click="addFriend()"><i class="material-icons">add_box</i>Add Friend</a>
-                    <a class="waves-effect waves-light btn red darken-1" ng-click="removeFriend()"><i class="material-icons">remove_circle</i>Remove Friend</a>
+                <div>
+                    <h2 class="name">{{showSingleProfile.name}}</h2>
+                    <div class="input-field friends-btn">
+                        <a class="waves-effect waves-light btn blue darken-1 add-friend" ng-if="!isFriend" ng-click="addFriend()"><i class="material-icons">add_box</i>Add Friend</a>
+                        <a class="waves-effect waves-light btn red darken-1" ng-if="isFriend" ng-click="removeFriend()"><i class="material-icons">remove_circle</i>Remove Friend</a>
+                    </div>
                 </div>
             </div>
             <div class="col s12">
                 <h4 class="tagline">{{showSingleProfile.tagline}}</h4>
                 <p class="bio">{{showSingleProfile.bio}}</p>
             </div>
-
         </div>
-
-
     </div>
     <!-- END LEFT SIDE -->
+
     <div id="search-devs-container" class="col s6">
         <div class="input-field">
             <input id="search-devs" type="text" class="validate" ng-model="search.name">
             <label for="search-devs">
-                <i class="material-icons left">search</i>Search for cool Developers</label>
+                <i class="material-icons left">search</i>Search friends..</label>
         </div>
         <div class="row loadmore">
-            <div href="#" class="picture col s6" ng-click="singleProfile(dev)" ng-repeat="dev in profiles | filter: search track by $index">
-                <img ng-src="{{dev.profileUrl}}" err-src="/../../lib/img/avatar.png" alt=""/>
-                <h5>{{dev.name}}</h5>
+            <div href="#" class="picture col s6" ng-click="singleProfile(friend)" ng-repeat="friend in myFriends | filter: search track by $index">
+                <img ng-src="{{friend.profileUrl}}" err-src="/../../lib/img/avatar.png" alt=""/>
+                <h5>{{friend.name}}</h5>
             </div>
         </div>
     </div>

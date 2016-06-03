@@ -1,4 +1,4 @@
-DevBook.factory('friendsFactory', function($http){
+DevBook.factory('friendsFactory', function($http, profilesFactory){
 
     function addFriend(myId, friendId){
         return $http({
@@ -8,7 +8,6 @@ DevBook.factory('friendsFactory', function($http){
             return response.data;
         })
     }
-
     function removeFriend(myId, friendId){
         return $http({
             url: 'http://connections.devmounta.in/api/profiles/' + myId + '/friends/' + friendId
@@ -17,19 +16,15 @@ DevBook.factory('friendsFactory', function($http){
             return response.data;
         });
     }
-
-    function checkFriends(friendId){
-        return $http({
-            url: 'http://connections.devmounta.in/api/friends-friends/' + friendId
-            ,   method: 'GET'
-        }).then(function(response){
-            return response.data;
-        });
-    }
+    // function getFriendsData(myFriendsId){
+    //     return profilesFactory.getProfiles(myFriendsId).then(function(result){
+    //         return result.data;
+    //     })
+    // }
 
     return{
         add: addFriend
         ,   remove: removeFriend
-        ,   checkFriends: checkFriends
+        // ,   getMyFriends: getFriendsData
     }
 })
